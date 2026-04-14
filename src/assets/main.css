@@ -1,0 +1,263 @@
+@import 'tailwindcss';
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* 0d0f1d */
+  --color-primary: #0d0f1d;
+  --color-surface: #1a1c2e;
+  --font-primary: 'primary', sans-serif;
+  --font-secondary: 'secondary', sans-serif;
+  --color-gray: #5c6672;
+}
+
+@font-face {
+  font-family: 'primary';
+  src: url(./fonts/Manrope/static/Manrope-Regular.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: secondary;
+  src: url(./fonts/Syne/static/Syne-Bold.ttf);
+}
+
+@utility gradient-text {
+  background: linear-gradient(to right, #8236fb, #076ef4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@utility gradient-bg {
+  background: linear-gradient(to right, #8236fb 21%, #076ef4);
+  transition: background 300ms ease;
+
+  &:hover {
+    background: linear-gradient(to right, #076ef4, #6842fa);
+  }
+}
+
+@layer components {
+  .mobile-nav-bar {
+    @apply fixed top-0 left-0 h-[100px] w-full font-secondary flex items-center justify-between p-5 border-b border-white/10 z-50 bg-primary/70 backdrop-blur-md;
+  }
+  .mobile-nav-link {
+    @apply h-[75px] flex items-center border-b-2 border-gray/20 font-bold font-secondary;
+  }
+  .mobile-nav-panel {
+    @apply fixed top-[100px] left-0 w-full z-40 text-primary bg-white dark:bg-primary dark:text-white;
+    height: calc(100dvh - 100px);
+  }
+  .desktop-nav-bar {
+    @apply fixed top-0 left-0 w-full h-[100px] 
+  text-white
+  flex items-center justify-between p-5 z-50 
+  bg-primary/70
+  backdrop-blur-md font-secondary border-b border-white/10;
+  }
+  .links {
+    @apply hover:text-purple-600 dark:hover:text-purple-400;
+  }
+  li {
+    @apply cursor-pointer;
+  }
+  .left-side-container {
+    @apply flex items-center justify-between gap-20;
+  }
+  .shape {
+    @apply gradient-text w-[200px] h-[300px] rotate-40 rounded-[10px];
+  }
+  .shape2 {
+    @apply bg-primary/50 w-[250px] h-[600px] rotate-40 rounded-[10px] relative left-[-100px] top-50;
+  }
+  .shape-container {
+    @apply relative left-[-150px] flex items-center h-screen w-[600px];
+  }
+  .container {
+    @apply h-screen w-full mt-[100px] m-5;
+  }
+  .contact-me-button {
+    @apply gradient-bg p-3 gap-2 w-auto rounded-[10px] flex items-center justify-center cursor-pointer;
+  }
+  .page-container {
+    @apply md:px-0;
+  }
+  .main-container {
+    @apply w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-24;
+  }
+  .icon-enter-active,
+  .icon-leave-active {
+    @apply transition duration-300;
+  }
+  /* HeroCard.Vue */
+  .hero-card-container {
+    @apply relative top-1/2 -translate-y-1/2 w-full md:w-[400px] h-[200px] bg-white  rounded-[10px] flex items-center justify-center drop-shadow-xl transition-transform duration-300 ease-in-out hover:scale-105 cursor-pointer dark:bg-white/5 dark:backdrop-blur-md dark:border dark:border-white/10 dark:text-white;
+  }
+  .hero-card-child-div {
+    @apply flex flex-col items-center justify-center p-5 text-center;
+  }
+  .hero-text {
+    @apply font-bold md:text-2xl text-xl;
+  }
+  /* AboutSection.vue */
+  .about-me-card-container {
+    @apply w-[400px]  flex hidden md:block cursor-pointer;
+  }
+  .about-me-card-container img {
+    @apply rounded-[10px] cursor-pointer;
+  }
+  .about-container {
+    @apply md:flex md:justify-between w-full;
+  }
+  .about-text {
+    @apply text-black dark:text-white;
+  }
+  /* FeaturedProjects.vue */
+  .featured-projects-container {
+    @apply w-full h-auto md:flex md:m-5 md:flex-col md:items-center md:justify-center;
+  }
+  .featured-card-image {
+    @apply h-[300px] w-full object-cover transition-transform duration-300 hover:scale-110 cursor-pointer;
+  }
+  .featured-card-container {
+    @apply bg-white dark:bg-primary rounded-b-[10px] drop-shadow-xl h-[175px] dark:border dark:border-white/10;
+  }
+  /* TechStack.vue */
+  .gradient-shape {
+    @apply gradient-bg w-[15px] h-[15px] rounded-sm;
+  }
+  .gradient-shape-container {
+    @apply flex items-center text-white pb-5 space-x-3;
+  }
+  .circle-green {
+    @apply rounded-full bg-green-500 h-[15px] w-[15px];
+  }
+  .circle-blue {
+    @apply rounded-full bg-blue-500 h-[15px] w-[15px];
+  }
+  .tech-stack-container {
+    @apply flex items-center gap-2 px-4 py-2 rounded-[10px] border border-gray-300 dark:border-white/10 cursor-pointer transition-all duration-300 hover:scale-105 hover:border-[#6842FA] hover:bg-white/10;
+  }
+  .tech-stack-header {
+    @apply font-bold text-[25px] pb-5;
+  }
+  .chip-container {
+    @apply flex flex-wrap gap-3 mt-3 md:justify-start;
+  }
+  /* Testimonials.vue */
+  .testimonial_bg {
+    @apply flex items-center justify-center;
+  }
+  .testimonial-container {
+    @apply relative overflow-hidden rounded-md drop-shadow-md top-1/2 -translate-y-1/4 w-full cursor-pointer;
+  }
+  .overlay {
+    @apply absolute inset-0 z-10 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  }
+  /* ContectMeSection.vue */
+  .contact-me-section {
+    @apply min-h-screen md:flex md:items-center md:justify-between gap-10;
+  }
+  .contact-me-section-right-side {
+    @apply flex-1 flex items-center justify-center py-10 md:py-0;
+  }
+  .contact-form-container {
+    @apply bg-white dark:bg-primary dark:border dark:border-white/10 drop-shadow-2xl rounded-[15px] w-full;
+  }
+  /* AboutMe.vue */
+  .about-header {
+    @apply flex items-center gap-3 text-[#8D84FB] uppercase text-lg;
+  }
+  .framework-card {
+    @apply relative overflow-hidden rounded-xl bg-cover bg-center h-[200px] md:h-auto cursor-pointer transition hover:scale-103 duration-300;
+  }
+  .cv {
+    @apply px-6 py-3 bg-[#8D84FB] text-white rounded-lg hover:bg-[#7a6de0] transition duration-300 cursor-pointer;
+  }
+  /* AboutTechStack.vue */
+  .tech-stack-card-title {
+    @apply font-bold text-2xl font-secondary text-primary dark:text-white;
+  }
+  .tech-stack-header {
+    @apply p-2 bg-white dark:bg-primary w-fit rounded-[10px];
+  }
+  .tech-stack-card {
+    @apply w-full bg-white dark:bg-[#181B2D] rounded-[10px] p-5 border border-white/10 drop-shadow-xl;
+  }
+  /* JOURNEY */
+  .journey-container {
+    @apply flex items-start gap-5 w-full;
+  }
+  .dot {
+    @apply w-3 h-3 rounded-full bg-[#8236fb] shadow-[0_0_10px_#8236fb];
+  }
+  .left-vertical-line {
+    @apply w-[2px] bg-gradient-to-b from-[#8236fb] to-[#076ef4] flex-1;
+  }
+  .tl-date {
+    @apply font-bold uppercase text-[#8D84FB];
+  }
+  .tl-role {
+    @apply font-bold text-xl text-primary dark:text-white;
+  }
+  .tl-company {
+    @apply text-gray-400;
+  }
+  .tl-item {
+    @apply space-y-5 font-primary;
+  }
+  .tl-desc {
+    @apply text-gray-500;
+  }
+  /* ValuesCard.vue */
+  .values-card-cointainer {
+    @apply bg-white drop-shadow-md dark:bg-surface rounded-md p-5 border dark:border-white/10 space-y-5 hover:border-[#7a6de0] cursor-pointer transition-all duration-300;
+  }
+  .values-card-title {
+    @apply dark:text-white font-bold text-primary font-bold font-secondary;
+  }
+  .icon-enter-from,
+  .icon-leave-to {
+    @apply opacity-0;
+  }
+  .home-bg {
+    background-image: url(./Images/background_image.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+  .testimonial_bg {
+    background-image: url(./Images/testimonial_bg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 50vh;
+    overflow: hidden;
+  }
+  body {
+    @apply bg-[#F0EEFF] dark:bg-primary overflow-x-hidden;
+  }
+}
+
+.nav-slide-enter-active,
+.nav-slide-leave-active {
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.nav-slide-enter-from,
+.nav-slide-leave-to {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+@layer base {
+  body {
+    font-family: 'primary', sans-serif;
+  }
+}
