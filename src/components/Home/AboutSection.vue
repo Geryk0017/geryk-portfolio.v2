@@ -1,6 +1,6 @@
 <script setup>
 import AboutMeImage1 from '@/assets/Images/about_me_image(1).png'
-import AboutMeImage2 from '@/assets/Images/about_me_image(2).png'
+import Me from '@/assets/Images/me.jpg'
 import CircleCheck from '../Icons/CircleCheck.vue'
 import ContactMe from '../Buttons/ContactMe.vue'
 </script>
@@ -18,7 +18,7 @@ import ContactMe from '../Buttons/ContactMe.vue'
       </div>
       <div class="absolute">
         <div class="about-me-card-container md:mx-25 my-25 md:my-25">
-          <img :src="AboutMeImage2" class="h-[500px]" />
+          <img :src="Me" class="h-[500px] w-full" />
         </div>
       </div>
     </div>
@@ -65,7 +65,7 @@ import ContactMe from '../Buttons/ContactMe.vue'
         </div>
       </div>
       <div class="pt-10 text-white">
-        <ContactMe name="MORE ABOUT ME" />
+        <ContactMe name="MORE ABOUT ME" path="/about" />
       </div>
     </div>
   </div>

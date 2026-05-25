@@ -8,10 +8,12 @@ defineProps({
 })
 </script>
 <template>
-  <div
-    class="overflow-hidden md:row-span-2 rounded-xl h-[400px] md:h-full cursor-pointer transition hover:scale-103 duration-300"
-  >
-    <img :src="myImage" :alt="myImage" class="w-full h-full object-cover object-top" />
+  <div class="overflow-hidden md:row-span-2 rounded-xl h-[400px] md:h-full cursor-pointer group">
+    <img
+      :src="myImage"
+      :alt="myImage"
+      class="w-full h-full object-cover object-top transition-transform duration-300 ease-in-out hover:scale-105"
+    />
   </div>
 
   <!-- Laravel -->

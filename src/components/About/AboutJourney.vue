@@ -71,7 +71,14 @@ const secondRow = computed(() => valuesData.slice(2, 4))
 
       <section class="w-full">
         <div class="flex flex-col items-center gap-5 mt-10">
-          <JourneyCard v-for="(journey, index) in journeyData" :key="index" v-bind="journey" />
+          <JourneyCard
+            v-for="(journey, index) in journeyData"
+            :key="index"
+            v-bind="journey"
+            data-aos="fade-right"
+            data-aos-duration="1000"
+            data-aos-delay="index * 150"
+          />
         </div>
       </section>
     </div>
