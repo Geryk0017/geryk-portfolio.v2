@@ -18,7 +18,7 @@ const route = useRoute()
           <div class="flex items-center gap-4">
             <img :src="Logo" alt="logo" />
             <h1 class="text-xl font-secondary font-bold text-white">
-              Geryk<span class="text-[#8D84FB]">folio</span>
+              Geryk<span class="text-[#8D84FB]">.portfolio()</span>
             </h1>
           </div>
         </div>
@@ -42,7 +42,7 @@ const route = useRoute()
           <Moon v-if="theme.isDark" />
           <Sun v-else />
         </div>
-        <ContactMe name="Contact Me" />
+        <ContactMe name="Contact Me" path="/" hash="#contact" />
       </div>
     </div>
   </nav>

@@ -22,7 +22,7 @@ const toggleNav = () => {
       <div class="flex items-center gap-4">
         <img :src="Logo" alt="logo" />
         <h1 class="text-xl font-secondary font-bold text-white">
-          Geryk<span class="text-[#8D84FB]">folio</span>
+          Geryk<span class="text-[#8D84FB]">.portfolio()</span>
         </h1>
       </div>
       <div @click="toggleNav" class="cursor-pointer">

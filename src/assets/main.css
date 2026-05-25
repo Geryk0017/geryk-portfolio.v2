@@ -46,8 +46,7 @@
     @apply h-[75px] flex items-center border-b-2 border-gray/20 font-bold font-secondary;
   }
   .mobile-nav-panel {
-    @apply fixed top-[100px] left-0 w-full z-40 text-primary bg-white dark:bg-primary dark:text-white;
-    height: calc(100dvh - 100px);
+    @apply fixed top-[100px] left-0 w-full z-40 text-primary bg-white dark:bg-primary dark:text-white min-h-screen;
   }
   .desktop-nav-bar {
     @apply fixed top-0 left-0 w-full h-[100px] 
@@ -58,6 +57,9 @@
   }
   .links {
     @apply hover:text-purple-600 dark:hover:text-purple-400;
+  }
+  .links .router-link-exact-active {
+    @apply text-purple-600 dark:text-purple-400;
   }
   li {
     @apply cursor-pointer;
@@ -217,6 +219,33 @@
   }
   .values-card-title {
     @apply dark:text-white font-bold text-primary font-bold font-secondary;
+  }
+  /* AboutCTA.vue */
+  .cta {
+    @apply relative overflow-hidden w-full flex items-center justify-center rounded-xl;
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(108, 99, 255, 0.4) 0%, transparent 70%),
+      linear-gradient(135deg, #1a1d35 0%, #1c1540 100%);
+  }
+  .cta::before {
+    content: '';
+    @apply absolute inset-0 rounded-xl opacity-0 transition-opacity duration-300 z-0;
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(108, 99, 255, 0.4) 0%, transparent 70%),
+      linear-gradient(135deg, #8236fb 0%, #076ef4 100%);
+  }
+  .cta-wrapper {
+    @apply relative z-10 m-25 space-y-5 text-center flex flex-col items-center;
+  }
+  /* ProjectsBanner.vue */
+  .projects-banner-container {
+    @apply relative w-full h-[300px]  flex flex-col items-center  rounded-[10px] overflow-hidden space-y-10;
+  }
+  .featured-project {
+    @apply font-secondary font-bold dark:text-white text-[70px];
+  }
+  .filter-tab {
+    @apply bg-[#8D84FB] p-3 rounded-[10px] text-white font-primary transition duration-300 hover:bg-[#7a6de0] cursor-pointer;
   }
   .icon-enter-from,
   .icon-leave-to {

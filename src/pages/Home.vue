@@ -131,7 +131,7 @@ const testimonials = [
     </div>
   </div>
 
-  <div class="page-container min-h-screen dark:bg-primary">
+  <div class="page-container min-h-screen dark:bg-primary" id="contact">
     <div class="main-container">
       <ContactMeSection />
     </div>
