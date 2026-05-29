@@ -2,7 +2,7 @@
 import FeaturedCard from '../Cards/FeaturedCard.vue'
 import POS from '@/assets/Images/pos.jpg'
 import rboc from '@/assets/Images/rboc-ims.jpg'
-import rfid from '@/assets/Images/rfid.jpg'
+import face_recog from '@/assets/Images/face_recog.png'
 
 const card = [
   {
@@ -18,8 +18,8 @@ const card = [
       'A capstone project for tracking stock levels, managing supplies, and generating inventory reports.',
   },
   {
-    img: rfid,
-    title: 'RFID Attendance, Borrowing & Inventory System',
+    img: face_recog,
+    title: 'RFID Attendance, Borrowing & Facial Recognition System',
     description:
       'A university system using RFID to automate attendance, equipment borrowing, and inventory tracking.',
   },
