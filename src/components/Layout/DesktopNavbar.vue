@@ -17,9 +17,11 @@ const route = useRoute()
         <div class="left-side-container">
           <div class="flex items-center gap-4">
             <img :src="Logo" alt="logo" />
-            <h1 class="text-xl font-secondary font-bold text-white">
-              Geryk<span class="text-[#8D84FB]">.portfolio()</span>
-            </h1>
+            <RouterLink to="/">
+              <h1 class="text-xl font-secondary font-bold dark:text-white">
+                Geryk<span class="text-[#8D84FB]">.portfolio()</span>
+              </h1>
+            </RouterLink>
           </div>
         </div>
       </div>

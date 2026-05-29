@@ -8,12 +8,16 @@ defineProps({
     type: String,
     default: 'circle-green',
   },
+  showColor: {
+    type: Boolean,
+    default: true,
+  },
 })
 </script>
 
 <template>
   <div class="tech-stack-container">
-    <span :class="color"></span>
+    <span v-if="showColor" :class="color"></span>
     <p>{{ name }}</p>
   </div>
 </template>
