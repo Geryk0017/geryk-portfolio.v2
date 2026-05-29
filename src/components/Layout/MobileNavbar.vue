@@ -21,9 +21,11 @@ const toggleNav = () => {
     <div class="mobile-nav-bar" :class="{ 'border-none': route.path === '/' }">
       <div class="flex items-center gap-4">
         <img :src="Logo" alt="logo" />
-        <h1 class="text-xl font-secondary font-bold text-white">
-          Geryk<span class="text-[#8D84FB]">.portfolio()</span>
-        </h1>
+        <RouterLink to="/">
+          <h1 class="text-xl font-secondary font-bold text-white">
+            Geryk<span class="text-[#8D84FB]">.portfolio()</span>
+          </h1>
+        </RouterLink>
       </div>
       <div @click="toggleNav" class="cursor-pointer">
         <Menu v-if="!isOpen" />
@@ -43,7 +45,7 @@ const toggleNav = () => {
               <RouterLink to="/about">About</RouterLink>
             </li>
             <li class="mobile-nav-link">
-              <RouterLink to="/">Projects</RouterLink>
+              <RouterLink to="/projects">Projects</RouterLink>
             </li>
             <li class="mobile-nav-link flex items-center gap-5">
               <h1>Dark Mode:</h1>

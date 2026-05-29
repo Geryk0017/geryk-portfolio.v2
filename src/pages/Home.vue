@@ -62,7 +62,7 @@ const testimonials = [
 <template>
   <section class="home-bg">
     <!-- CONTAINER -->
-    <div class="flex items-center bg-primary/50" data-aos="fade-up" data-aos-duration="2000">
+    <div class="flex items-center" data-aos="fade-up" data-aos-duration="2000">
       <div class="shape-container">
         <div>
           <div class="shape"></div>

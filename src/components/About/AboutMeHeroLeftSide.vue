@@ -28,11 +28,19 @@ defineProps({
   </div>
 
   <div>
-    <button class="cv">
-      <div class="flex gap-2">
-        <Download />
-        Download CV
-      </div>
-    </button>
+    <a
+      href="/cv/Geryk_Martin_Bubutan_CV_Revised.pdf"
+      download="Geryk-CV.pdf"
+      target="_blank"
+      class="hover:text-purple transition-colors"
+      aria-label="Download CV"
+    >
+      <button class="cv">
+        <div class="flex gap-2">
+          <Download />
+          Download CV
+        </div>
+      </button>
+    </a>
   </div>
 </template>
